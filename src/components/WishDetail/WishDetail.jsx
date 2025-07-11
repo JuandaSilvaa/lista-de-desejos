@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { formatDate } from "../../utils/formatDate";
 import { AddItemForm } from "../AddItemForm/AddItemForm";
 import styles from "./WishDetail.module.css";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export const WishDetail = () => {
   const { id } = useParams();
@@ -47,7 +48,7 @@ export const WishDetail = () => {
       <div className={styles.container}>
         <div className={styles.button}>
           <button className={styles.btn} onClick={() => navigate(-1)}>
-            ⬅️ Voltar
+            <IoMdArrowRoundBack /> Voltar
           </button>
           <button className={styles.btn} onClick={handleEditToggle}>
             {isEditing ? "❌ Cancelar" : "✏️ Editar"}

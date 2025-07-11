@@ -5,20 +5,20 @@ import { Layout } from "../components/Layout/Layout";
 import { WishDetail } from "../components/WishDetail/WishDetail";
 
 export const Router = () => {
-    const [search, setSearch] = useState("");
-    const onSearch = useCallback((searchValue) => {
-        setSearch(searchValue);
-      });
-      const onClear = useCallback(() => {
-        setSearch("");
-      });
+  const [search, setSearch] = useState("");
+
+  const onSearch = useCallback((searchValue) => {
+    setSearch(searchValue);
+  });
+  const onClear = useCallback(() => {
+    setSearch("");
+  });
   return (
     <Routes>
-      <Route element={<Layout onClear={onClear} onSearch={onSearch}/>}>
-        <Route path="/wishlist" element={<App search={search} />} />
-        <Route path="/wishlist/wish/:id" element={<WishDetail/>}/>
+      <Route element={<Layout onClear={onClear} onSearch={onSearch} />}>
+        <Route path="/lista-de-desejos" element={<App search={search} />} />
+        <Route path="/lista-de-desejos/wish/:id" element={<WishDetail />} />
         <Route path="/*" element={<App search={search} />} />
-
       </Route>
     </Routes>
   );
